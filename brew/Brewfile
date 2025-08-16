@@ -1,7 +1,6 @@
 # https://github.com/Homebrew/homebrew-bundle
 
 tap "olets/tap"
-tap "stripe/stripe-cli"
 tap "teamookla/speedtest"
 
 # Homebrew

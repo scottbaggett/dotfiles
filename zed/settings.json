@@ -1,0 +1,136 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "terminal": {
+    "font_family": "Hack Nerd Font Mono",
+    "font_size": 13,
+    "shell": "system"
+  },
+  "vim_mode": true,
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "source": "extension",
+      "settings": {
+        "default_minimum_tokens": "10000"
+      }
+    }
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-5"
+    },
+    "model_parameters": [],
+    "default_profile": "write"
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "ui_font_size": 18,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Dracula Light (Alucard",
+    "dark": "Catppuccin Mocha"
+  },
+  "languages": {
+    "TypeScript": {
+      "language_servers": ["typescript-language-server"],
+      "tab_size": 4,
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "JavaScript": {
+      "tab_size": 4,
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TSX": {
+      "language_servers": ["typescript-language-server"],
+      "tab_size": 4
+    }
+  },
+  "prettier": {
+    "allowed": true,
+    "tab_size": 4
+  },
+  "inlay_hints": {
+    // "enabled": true
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    // above is default from Zed
+    "**/out",
+    "**/dist",
+    "**/.husky",
+    "**/.turbo",
+    "**/.vscode-test",
+    "**/.vscode",
+    "**/.next",
+    "**/.storybook",
+    "**/.tap",
+    "**/.nyc_output",
+    "**/report",
+    "**/node_modules"
+  ],
+  // Turn off telemetry
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "project_panel": {
+    "button": true,
+    "dock": "right",
+    "git_status": true
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  // Move some unnecessary panels to the left
+  "notification_panel": {
+    "dock": "left"
+  },
+  "chat_panel": {
+    "dock": "left"
+  }
+}

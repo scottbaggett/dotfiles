@@ -7,12 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_family": "Hack Nerd Font Mono",
   "terminal": {
     "font_family": "Hack Nerd Font Mono",
-    "font_size": 13,
     "shell": "system"
   },
-  "vim_mode": true,
+  "vim_mode": false,
   "edit_predictions": {
     "mode": "subtle",
     "copilot": {
@@ -45,8 +45,8 @@
     },
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-5"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
     "model_parameters": [],
     "default_profile": "write"
@@ -62,6 +62,9 @@
     "dark": "Catppuccin Mocha"
   },
   "languages": {
+    "devicetree": {
+      "tab_size": 2
+    },
     "TypeScript": {
       "language_servers": ["typescript-language-server"],
       "tab_size": 4,
@@ -86,6 +89,9 @@
   },
   "inlay_hints": {
     // "enabled": true
+  },
+  "file_types": {
+    "devicetree": ["*.keymap"]
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -116,8 +122,9 @@
     "metrics": false
   },
   "project_panel": {
+    "hide_gitignore": true,
     "button": true,
-    "dock": "right",
+    "dock": "left",
     "git_status": true
   },
   "outline_panel": {

@@ -78,6 +78,9 @@
         "source.fixAll.eslint": true
       }
     },
+    "JSON": {
+      "tab_size": 4
+    },
     "TSX": {
       "language_servers": ["typescript-language-server"],
       "tab_size": 4

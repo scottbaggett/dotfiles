@@ -4,7 +4,7 @@ Personal dotfiles configuration for macOS development environment.
 
 ## Overview
 
-<img src="assets/cats.jpg" width="200">
+<img src="assets/cats.jpg">
 
 This repository contains my config files for various development tools and applications, managed with GNU Stow for easy symlink management.
 

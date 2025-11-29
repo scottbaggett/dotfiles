@@ -21,3 +21,4 @@ scratchpads/
 *.rej
 *.archive/
 *.old/
+.dex

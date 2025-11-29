@@ -124,7 +124,7 @@
 [url "https://"]
   insteadOf = git://
 [user]
-	email = =
+	email = hello@scottbaggett.com
 	name = =
 	signingkey = 3739C5BBEB3B2C95993C23EACF7355A93523B7CB
 [filter "lfs"]

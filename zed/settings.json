@@ -8,13 +8,15 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "buffer_font_family": "Hack Nerd Font Mono",
+  "format_on_save": "on",
+  "tab_size": 4,
   "terminal": {
     "font_family": "Hack Nerd Font Mono",
     "shell": "system"
   },
   "vim_mode": false,
   "edit_predictions": {
-    "mode": "subtle",
+    "mode": "eager",
     "copilot": {
       "proxy": null,
       "proxy_no_verify": null,
@@ -23,10 +25,30 @@
     "enabled_in_text_threads": false
   },
   "context_servers": {
+    "mcp-server-sequential-thinking": {
+      "source": "extension",
+      "enabled": false,
+      "settings": {}
+    },
+    "mcp-server-puppeteer": {
+      "source": "extension",
+      "enabled": false,
+      "settings": {}
+    },
     "mcp-server-context7": {
       "source": "extension",
       "settings": {
         "default_minimum_tokens": "10000"
+      }
+    }
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "classFunctions": ["cva", "cx"],
+        "experimental": {
+          "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"]
+        }
       }
     }
   },
@@ -37,16 +59,16 @@
   "git_panel": {
     "dock": "right"
   },
-  "icon_theme": "Catppuccin Mocha",
   "agent": {
+    "use_modifier_to_send": true,
     "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-latest"
     },
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest"
     },
     "model_parameters": [],
     "default_profile": "write"
@@ -54,41 +76,54 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "ui_font_size": 18,
-  "buffer_font_size": 16,
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
   "theme": {
     "mode": "system",
-    "light": "Dracula Light (Alucard",
-    "dark": "Catppuccin Mocha"
+    "light": "macOS Classic Light",
+    "dark": "Nightfox - blurred"
   },
   "languages": {
     "devicetree": {
       "tab_size": 2
     },
     "TypeScript": {
-      "language_servers": ["typescript-language-server"],
+      "formatter": { "language_server": { "name": "biome" } },
       "tab_size": 4,
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
       }
     },
     "JavaScript": {
       "tab_size": 4,
+      "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
       }
     },
+    "JSON5": {
+      "tab_size": 2,
+      "formatter": { "language_server": { "name": "biome" } }
+    },
     "JSON": {
-      "tab_size": 4
+      "formatter": { "language_server": { "name": "biome" } },
+      "tab_size": 2
+    },
+    "CSS": {
+      "formatter": {
+        "language_server": { "name": "biome" }
+      }
     },
     "TSX": {
-      "language_servers": ["typescript-language-server"],
-      "tab_size": 4
+      "formatter": { "language_server": { "name": "biome" }, "enabled": true },
+      "tab_size": 4,
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      }
     }
-  },
-  "prettier": {
-    "allowed": true,
-    "tab_size": 4
   },
   "inlay_hints": {
     // "enabled": true
@@ -125,7 +160,7 @@
     "metrics": false
   },
   "project_panel": {
-    "hide_gitignore": true,
+    "hide_gitignore": false,
     "button": true,
     "dock": "left",
     "git_status": true

@@ -10,8 +10,7 @@
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  --'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -22,8 +21,6 @@ require('lazy').setup({
 
   -- modular approach: using `require 'path.name'` will
   -- include a plugin definition from file lua/path/name.lua
-
-  require 'kickstart.plugins.projectmanager',
 
   require 'kickstart.plugins.gitsigns',
 
@@ -36,8 +33,6 @@ require('lazy').setup({
   require 'kickstart.plugins.conform',
 
   require 'kickstart.plugins.blink-cmp',
-
-  require 'kickstart.plugins.tokyonight',
 
   require 'kickstart.plugins.todo-comments',
 
@@ -66,7 +61,7 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   { import = 'custom.plugins' },
   --
-  -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
+  -- Fr additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search

@@ -1,0 +1,50 @@
+{
+  "editor.fontFamily": "Hack Nerd Font Mono",
+  "editor.fontSize": 15,
+  "editor.letterSpacing": -0.2,
+  "editor.lineHeight": 1.44,
+  "workbench.fontAliasing": "antialiased",
+  "editor.fontLigatures": true,
+  "editor.accessibilitySupport": "off",
+  "editor.formatOnSave": true,
+  "catppuccin.italicComments": false,
+  "catppuccin.italicKeywords": false,
+  "editor.renderWhitespace": "trailing",
+  "terminal.integrated.suggest.enabled": true,
+  "git.confirmSync": false,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+  "search.useGlobalIgnoreFiles": true,
+  "search.useParentIgnoreFiles": true,
+  "vs-code-prettier-eslint.prettierLast": true,
+  "eslint.format.enable": true,
+  "files.exclude": {
+    "**/comfyui": true,
+    "comfyui/": true,
+    "comfyui/scripts/**": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "workbench.colorTheme": "Visual Studio Dark",
+  "claudeCode.useTerminal": true,
+	"markdown-preview-enhanced.previewTheme": "github-dark.css",
+	"git.openRepositoryInParentFolders": "never",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[tsx]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "biome.suggestInstallingGlobally": false,
+  "editor.tabSize": 2,
+  "biome.runFromTemporaryLocation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
+  },
+  "editor.detectIndentation": false
+}

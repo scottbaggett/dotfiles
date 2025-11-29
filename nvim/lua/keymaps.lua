@@ -8,7 +8,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>c', ':bd<CR>', { desc = 'Close active buffer' })
 
 -- Save file
-vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Save file' })
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Save' })
 -- Quit
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Quit' })
 -- Diagnostic keymaps
@@ -20,7 +20,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -69,15 +69,40 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Open recent files with Telescope
-vim.keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<CR>', { desc = 'Find recent files' })
+vim.keymap.set('n', '<leader>srf', '<cmd>Telescope oldfiles<CR>', { desc = 'Find recent files' })
 vim.keymap.set('n', '<leader>o', ':Oil<CR>', { desc = 'Open oil.nvim' })
 
 -- Buffer switching
 vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>bl', '<cmd>Telescope buffers<CR>', { desc = 'View buffers' })
 
 --- Map 'jk' in insert mode to escape to normal mode
 --- @see https://neovim.io/doc/user/map.html
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
---- Reload Neovim config with <leader>sv
 vim.keymap.set('n', '<leader>sv', '<cmd>source $MYVIMRC<CR>', { desc = 'Reload vimrc' })
+vim.keymap.set('n', '<leader>tm', ':terminal<CR>a', { desc = 'Terminal' })
+
+-- Normal mode: move by word
+vim.keymap.set('n', '<A-Right>', 'w', { desc = 'Move forward by word' })
+vim.keymap.set('n', '<A-Left>', 'b', { desc = 'Move backward by word' })
+
+-- Insert mode: move by word
+vim.keymap.set('i', '<A-Right>', '<C-Right>', { desc = 'Move forward by word (insert)' })
+vim.keymap.set('i', '<A-Left>', '<C-Left>', { desc = 'Move backward by word (insert)' })
+
+--- Increases or decreases vim.g.neovide_scale_factor by 0.1
+--- Increase scale factor
+local function increase_scale()
+  vim.g.neovide_scale_factor = math.min((vim.g.neovide_scale_factor or 1) + 0.1, 2.0)
+  print('Scale: ' .. string.format('%.2f', vim.g.neovide_scale_factor))
+end
+
+--- Decrease scale factor
+local function decrease_scale()
+  vim.g.neovide_scale_factor = math.max((vim.g.neovide_scale_factor or 1) - 0.1, 0.5)
+  print('Scale: ' .. string.format('%.2f', vim.g.neovide_scale_factor))
+end
+
+vim.keymap.set('n', '<C-=>', increase_scale, { desc = 'Increase Neovide scale' })
+vim.keymap.set('n', '<C-->', decrease_scale, { desc = 'Decrease Neovide scale' })

@@ -1,0 +1,10 @@
+format = """
+$git_branch\
+$directory\
+$git_status\
+$nodejs\
+$line_break\
+$character"""
+
+[package]
+disabled = true

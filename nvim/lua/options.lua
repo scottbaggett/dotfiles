@@ -1,4 +1,5 @@
 -- [[ Setting options ]]
+--
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
@@ -13,7 +14,7 @@ vim.o.relativenumber = true
 vim.o.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
-vim.o.showmode = false
+vim.o.showmode = true
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -71,4 +72,17 @@ vim.o.scrolloff = 5
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
-vim.g.neovide_scale_factor = 1.5 -- 1.0 is default, 1.5 is 150%
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.wrap = false
+
+--vim.o.bar.enable = true
+vim.o.linespace = 12
+
+-- NeoVide Controls
+vim.g.neovide_cursor_animation_length = 0.15
+vim.g.neovide_scroll_animation_length = 0.15
+vim.g.neovide_cursor_antialiasing = false
+vim.g.neovide_scale_factor = 1

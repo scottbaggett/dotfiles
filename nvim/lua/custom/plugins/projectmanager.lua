@@ -13,11 +13,12 @@ return {
   },
   opts = {
     projects = {
-      '~/code/dex',
       '~/dotfiles',
+      '~/code/dex',
       '~/code/palette/palette-playground/',
       '~/code/palette/palette-kit/',
-      '~/code/kindnote-native/',
+      '~/code/palette/palette-next',
+      '~/Obsidian/scottbaggett-lyt',
     },
     picker = {
       type = 'telescope', -- or "fzf-lua", "snacks"
@@ -26,5 +27,6 @@ return {
   init = function()
     -- Save global variables in session
     vim.opt.sessionoptions:append 'globals'
+    vim.keymap.set('n', '<leader>pm', ':NeovimProjectHistory<CR>', { desc = 'Neovim Project History' })
   end,
 }

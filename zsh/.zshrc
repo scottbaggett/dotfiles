@@ -4,7 +4,6 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/zap-prompt"
 plug "zsh-users/zsh-syntax-highlighting"
-alias ll='ls -alF'
 plug "lukechilds/zsh-nvm"
 
 # Load and initialise completion system
@@ -161,11 +160,26 @@ if [[ -o zle ]]; then
 fi
 
 # =============================================================================
+# Yazi
+export EDITOR="nvim"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 #
 # To initialize zoxide, add this to your shell configuration file (usually ~/.zshrc):
-#
 eval "$(zoxide init zsh)"
+alias cd='z'
 
-# aliases
-alias cpl="cp -X firmware/corne_left-nice_nano_v2.uf2 /Volumes/NICENANO"
-alias cpr="cp -X firmware/corne_right-nice_nano_v2.uf2 /Volumes/NICENANO"
+# Eza
+alias ls='eza --color=always --long --git --no-filesize --no-user --no-filesize --no-permissions --icons'
+alias lst='ls --tree -L=2'
+# Starship
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/dotfiles/starship/starship.toml
+
+

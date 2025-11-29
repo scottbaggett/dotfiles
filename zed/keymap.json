@@ -188,7 +188,7 @@
     "context": "Workspace",
     "bindings": {
       // Map VSCode like keybindings
-      "cmd-b": "workspace::ToggleRightDock"
+      "cmd-shift-b": "workspace::ToggleRightDock"
     }
   },
   // Run nearest task
@@ -216,4 +216,5 @@
   //     "g e": "vim::PreviousSubwordEnd"
   //   }
   // }
+
 ]

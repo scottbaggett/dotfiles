@@ -4,48 +4,61 @@ Personal dotfiles configuration for macOS development environment.
 
 ## Overview
 
-This repository contains configuration files for various development tools and applications, managed with GNU Stow for easy symlink management.
+<img src="assets/cats.jpg" width="200">
+
+This repository contains my config files for various development tools and applications, managed with GNU Stow for easy symlink management.
 
 ## Contents
 
 - **aerospace/** - AeroSpace window manager configuration
 - **brew/** - Homebrew package management (Brewfile)
+- **cursor/** - Cursor AI editor settings
 - **direnv/** - Directory-based environment configuration
+- **fish/** - Fish shell configuration
 - **ghostty/** - Ghostty terminal emulator settings
 - **git/** - Git configuration
 - **karabiner/** - Karabiner-Elements keyboard customization
 - **nvim/** - Neovim editor configuration with Lua
+- **shared/** - Shared configuration files
+- **starship/** - Starship cross-shell prompt configuration
 - **tmux/** - Terminal multiplexer configuration
+- **wezterm/** - WezTerm terminal emulator settings
+- **yazi/** - Yazi terminal file manager configuration
 - **zed/** - Zed editor settings and keymaps
 - **zsh/** - Zsh shell configuration
 
 ## Installation
 
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/your-username/dotfiles.git ~/.dotfiles
    cd ~/.dotfiles
    ```
 
 2. Install dependencies via Homebrew:
+
    ```bash
    brew bundle --file=brew/Brewfile
    ```
 
 3. Use Stow to symlink configurations:
+
    ```bash
    # Install all configurations
    stow */
-   
+
    # Or install specific configurations
    stow nvim zsh tmux
    ```
 
 ## Key Tools
 
-- **Terminal**: Ghostty
-- **Editor**: Neovim with Lua configuration
-- **Shell**: Zsh
+- **Terminals**: Ghostty, WezTerm
+- **Editors**: Neovim, Zed, Cursor
+- **Shells**: Zsh, Fish
+- **Prompt**: Starship
+- **File Manager**: Yazi
 - **Package Manager**: Homebrew
 - **Window Manager**: AeroSpace
 - **Keyboard Customization**: Karabiner-Elements
@@ -54,6 +67,7 @@ This repository contains configuration files for various development tools and a
 ## Neovim Setup
 
 The Neovim configuration uses:
+
 - Lazy.nvim plugin manager
 - Modular Lua configuration structure
 - Custom keymaps and globals
@@ -61,6 +75,7 @@ The Neovim configuration uses:
 ## Package Management
 
 The Brewfile includes essential development tools:
+
 - Command line utilities (ripgrep, fzf, bat, eza)
 - Development tools (gh, lazygit, docker tools)
 - Programming languages and runtimes
